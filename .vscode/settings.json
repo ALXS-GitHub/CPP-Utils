@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "unordered_map": "cpp",
+        "*.tpp": "cpp",
+        "iostream": "cpp",
+        "type_traits": "cpp",
+        "xstring": "cpp",
+        "map": "cpp",
+        "any": "cpp"
+    }
+}
