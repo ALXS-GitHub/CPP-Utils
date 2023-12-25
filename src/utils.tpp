@@ -610,20 +610,13 @@ namespace utils
     {
         if (a.has_value())
         {
+            // $ arithmetic
             if (a.type() == typeid(int))
                 print_in_line(any_cast<int>(a));
             else if (a.type() == typeid(float))
                 print_in_line(any_cast<float>(a));
             else if (a.type() == typeid(double))
                 print_in_line(any_cast<double>(a));
-            else if (a.type() == typeid(string))
-                print_in_line(any_cast<string>(a));
-            else if (a.type() == typeid(char*))
-                print_in_line(any_cast<char*>(a));
-            else if (a.type() == typeid(const char*))
-                print_in_line(any_cast<const char*>(a));
-            else if (a.type() == typeid(char))
-                print_in_line(any_cast<char>(a));
             else if (a.type() == typeid(bool))
                 print_in_line(any_cast<bool>(a));
             else if (a.type() == typeid(long int))
@@ -664,11 +657,29 @@ namespace utils
                 print_in_line(any_cast<std::any>(a));
             else if (a.type() == typeid(std::monostate))
                 print_in_line(any_cast<std::monostate>(a));
+            // $ string
+            else if (a.type() == typeid(string))
+                print_in_line(any_cast<string>(a));
+            else if (a.type() == typeid(char *))
+                print_in_line(any_cast<char *>(a));
+            else if (a.type() == typeid(const char *))
+                print_in_line(any_cast<const char *>(a));
+            else if (a.type() == typeid(char))
+                print_in_line(any_cast<char>(a));
+            else if (a.type() == typeid(char32_t))
+                print_in_line(any_cast<char32_t>(a));
+            else if (a.type() == typeid(char16_t))
+                print_in_line(any_cast<char16_t>(a));
+            else if (a.type() == typeid(wchar_t))
+                print_in_line(any_cast<wchar_t>(a));
+            else if (a.type() == typeid(std::string_view))
+                print_in_line(any_cast<std::string_view>(a));
+            // $ vector
+            // TODO later
             else
                 cout << "Type not supported" << endl;
         }
     }
-
 
     // µ main print function
     template <typename T>
