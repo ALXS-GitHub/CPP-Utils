@@ -6,6 +6,8 @@
         "type_traits": "cpp",
         "xstring": "cpp",
         "map": "cpp",
-        "any": "cpp"
+        "any": "cpp",
+        "variant": "cpp",
+        "tuple": "cpp"
     }
 }

@@ -28,194 +28,124 @@ namespace utils
         // µ is_string_like
 
         template <typename T>
-        struct is_string_like : std::false_type
-        {
-        };
+        struct is_string_like : std::false_type {};
 
         template <typename CharT, typename Traits, typename Alloc>
-        struct is_string_like<std::basic_string<CharT, Traits, Alloc>> : std::true_type
-        {
-        };
+        struct is_string_like<std::basic_string<CharT, Traits, Alloc>> : std::true_type {};
 
         template <typename CharT, typename Traits>
-        struct is_string_like<std::basic_string_view<CharT, Traits>> : std::true_type
-        {
-        };
+        struct is_string_like<std::basic_string_view<CharT, Traits>> : std::true_type {};
 
         template <typename CharT>
-        struct is_string_like<std::basic_string<CharT>> : std::true_type
-        {
-        };
+        struct is_string_like<std::basic_string<CharT>> : std::true_type {};
 
         template <typename CharT>
-        struct is_string_like<std::basic_string_view<CharT>> : std::true_type
-        {
-        };
+        struct is_string_like<std::basic_string_view<CharT>> : std::true_type {};
 
         template <typename CharT>
-        struct is_string_like<CharT *> : std::true_type
-        {
-        };
+        struct is_string_like<CharT *> : std::true_type {};
 
         template <typename CharT>
-        struct is_string_like<const CharT *> : std::true_type
-        {
-        };
+        struct is_string_like<const CharT *> : std::true_type {};
 
         // µ is_vector_like
         template <typename T>
-        struct is_vector_like : std::false_type
-        {
-        };
+        struct is_vector_like : std::false_type {};
 
         template <typename T, typename Alloc>
-        struct is_vector_like<std::vector<T, Alloc>> : std::true_type
-        {
-        };
+        struct is_vector_like<std::vector<T, Alloc>> : std::true_type {};
 
         template <typename T, typename Alloc>
-        struct is_vector_like<std::deque<T, Alloc>> : std::true_type
-        {
-        };
+        struct is_vector_like<std::deque<T, Alloc>> : std::true_type {};
 
         template <typename T, std::size_t N>
-        struct is_vector_like<std::array<T, N>> : std::true_type
-        {
-        };
+        struct is_vector_like<std::array<T, N>> : std::true_type {};
 
         // µ is_list_like
 
         template <typename T>
-        struct is_list_like : std::false_type
-        {
-        };
+        struct is_list_like : std::false_type {};
 
         template <typename T, typename Alloc>
-        struct is_list_like<std::list<T, Alloc>> : std::true_type
-        {
-        };
+        struct is_list_like<std::list<T, Alloc>> : std::true_type {};
 
         template <typename T, typename Alloc>
-        struct is_list_like<std::forward_list<T, Alloc>> : std::true_type
-        {
-        };
+        struct is_list_like<std::forward_list<T, Alloc>> : std::true_type {};
 
         // µ is_map_like
 
         template <typename T>
-        struct is_map_like : std::false_type
-        {
-        };
+        struct is_map_like : std::false_type {};
 
         template <typename Key, typename T, typename Compare, typename Alloc>
-        struct is_map_like<std::map<Key, T, Compare, Alloc>> : std::true_type
-        {
-        };
+        struct is_map_like<std::map<Key, T, Compare, Alloc>> : std::true_type {};
 
         template <typename Key, typename T, typename Compare, typename Alloc>
-        struct is_map_like<std::multimap<Key, T, Compare, Alloc>> : std::true_type
-        {
-        };
+        struct is_map_like<std::multimap<Key, T, Compare, Alloc>> : std::true_type {};
 
         template <typename Key, typename T, typename Hash, typename Pred, typename Alloc>
-        struct is_map_like<std::unordered_map<Key, T, Hash, Pred, Alloc>> : std::true_type
-        {
-        };
+        struct is_map_like<std::unordered_map<Key, T, Hash, Pred, Alloc>> : std::true_type {};
 
         template <typename Key, typename T, typename Hash, typename Pred, typename Alloc>
-        struct is_map_like<std::unordered_multimap<Key, T, Hash, Pred, Alloc>> : std::true_type
-        {
-        };
+        struct is_map_like<std::unordered_multimap<Key, T, Hash, Pred, Alloc>> : std::true_type {};
 
         // µ is_set_like
 
         template <typename T>
-        struct is_set_like : std::false_type
-        {
-        };
+        struct is_set_like : std::false_type {};
 
         template <typename Key, typename Compare, typename Alloc>
-        struct is_set_like<std::set<Key, Compare, Alloc>> : std::true_type
-        {
-        };
+        struct is_set_like<std::set<Key, Compare, Alloc>> : std::true_type {};
 
         template <typename Key, typename Compare, typename Alloc>
-        struct is_set_like<std::multiset<Key, Compare, Alloc>> : std::true_type
-        {
-        };
+        struct is_set_like<std::multiset<Key, Compare, Alloc>> : std::true_type {};
 
         template <typename Key, typename Hash, typename Pred, typename Alloc>
-        struct is_set_like<std::unordered_set<Key, Hash, Pred, Alloc>> : std::true_type
-        {
-        };
+        struct is_set_like<std::unordered_set<Key, Hash, Pred, Alloc>> : std::true_type {};
 
         template <typename Key, typename Hash, typename Pred, typename Alloc>
-        struct is_set_like<std::unordered_multiset<Key, Hash, Pred, Alloc>> : std::true_type
-        {
-        };
+        struct is_set_like<std::unordered_multiset<Key, Hash, Pred, Alloc>> : std::true_type {};
 
         // µ is_tuple_like
 
         template <typename T>
-        struct is_tuple_like : std::false_type
-        {
-        };
+        struct is_tuple_like : std::false_type {};
 
         template <typename... Args>
-        struct is_tuple_like<std::tuple<Args...>> : std::true_type
-        {
-        };
+        struct is_tuple_like<std::tuple<Args...>> : std::true_type {};
 
         template <typename... Args>
-        struct is_tuple_like<std::pair<Args...>> : std::true_type
-        {
-        };
+        struct is_tuple_like<std::pair<Args...>> : std::true_type {};
 
         template <typename... Args>
-        struct is_tuple_like<std::variant<Args...>> : std::true_type
-        {
-        };
+        struct is_tuple_like<std::variant<Args...>> : std::true_type {};
 
         template <typename... Args>
-        struct is_tuple_like<std::optional<Args...>> : std::true_type
-        {
-        };
+        struct is_tuple_like<std::optional<Args...>> : std::true_type {};
 
         // µ is_variant_like
 
         template <typename T>
-        struct is_variant_like : std::false_type
-        {
-        };
+        struct is_variant_like : std::false_type {};
 
         template <typename... Args>
-        struct is_variant_like<std::variant<Args...>> : std::true_type
-        {
-        };
+        struct is_variant_like<std::variant<Args...>> : std::true_type {};
 
         // µ is_optional_like
 
         template <typename T>
-        struct is_optional_like : std::false_type
-        {
-        };
+        struct is_optional_like : std::false_type {};
 
         template <typename... Args>
-        struct is_optional_like<std::optional<Args...>> : std::true_type
-        {
-        };
+        struct is_optional_like<std::optional<Args...>> : std::true_type {};
 
         // µ is_any_like
 
         template <typename T>
-        struct is_any_like : std::false_type
-        {
-        };
+        struct is_any_like : std::false_type {};
 
         template <>
-        struct is_any_like<std::any> : std::true_type
-        {
-        };
+        struct is_any_like<std::any> : std::true_type {};
 
     } // namespace detail
 
@@ -238,6 +168,38 @@ namespace utils
             instance = new Utils();
         }
         return instance;
+    }
+
+    bool Utils::getAutoReset()
+    {
+        return auto_reset;
+    }
+
+    void Utils::setAutoReset(bool auto_reset)
+    {
+        this->auto_reset = auto_reset;
+    }
+
+    string Utils::getDelimiter()
+    {
+        return delimiter;
+    }
+
+    void Utils::setDelimiter(string delimiter)
+    {
+        this->delimiter = delimiter;
+    }
+
+    // & Utils class settings functions
+
+    void setAutoReset(bool auto_reset)
+    {
+        Utils::getInstance()->setAutoReset(auto_reset);
+    }
+
+    void setDelimiter(string delimiter)
+    {
+        Utils::getInstance()->setDelimiter(delimiter);
     }
 
     // & functions
@@ -778,6 +740,7 @@ namespace utils
         {
             cout << "Type not supported" << endl;
         }
+
     }
 
     // µ print with color
@@ -786,7 +749,10 @@ namespace utils
     {
         make_color(color);
         print(element);
-        make_color("reset");
+
+        // % reset
+        if (Utils::getInstance()->getAutoReset())
+            make_color("reset");
     }
 
     // µ print with kwargs
@@ -795,25 +761,30 @@ namespace utils
     {
         make_color(kwargs);
         print(element);
-        make_color("reset");
+
+        // % reset
+        if (Utils::getInstance()->getAutoReset())
+            make_color("reset");
     }
 
-    // void print(list<any> elements, map<string, variant<string, bool>> kwargs)
-    // {
-    //     make_color(kwargs);
-    //     size_t counter = 0;
-    //     for (auto e : elements)
-    //     {
-    //         print_in_line(e);
-    //         if (counter != elements.size() - 1)
-    //         {
-    //             cout << ", ";
-    //         }
-    //         counter++;
-    //     }
-    //     cout << endl;
-    //     make_color("reset");
-    // }
+    // µ prints (for multiple elements)
+    // does not accept kwargs
+    template <typename... Args>
+    void prints(Args... elements) {
+        string delimiter = Utils::getInstance()->getDelimiter();
+        auto tuple = make_tuple(elements...);
+        apply([delimiter](auto &&...args)
+                   {
+        size_t count = 0;
+        ((std::cout << args << (++count != sizeof...(args) ? delimiter : "")), ...); },
+                   tuple);
+
+        cout << endl;
+
+        // % reset
+        if (Utils::getInstance()->getAutoReset())
+            make_color("reset");
+    }
 
     // µ print in line main function
     template <typename T>
@@ -917,7 +888,10 @@ namespace utils
     {
         make_color(color);
         print_in_line(element);
-        make_color("reset");
+
+        // % reset
+        if (Utils::getInstance()->getAutoReset())
+            make_color("reset");
     }
 
     // µ print in line with kwargs
@@ -926,6 +900,9 @@ namespace utils
     {
         make_color(kwargs);
         print_in_line(element);
-        make_color("reset");
+
+        // % reset
+        if (Utils::getInstance()->getAutoReset())
+            make_color("reset");
     }
 }
