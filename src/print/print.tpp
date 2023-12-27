@@ -5,7 +5,8 @@
 
 using namespace std;
 
-namespace utils {
+namespace utils
+{
 
     // µ print tuple
     template <size_t I, typename... Ts>
@@ -115,6 +116,10 @@ namespace utils {
             else if (a.type() == typeid(std::string_view))
                 print_in_line(any_cast<std::string_view>(a));
             // $ vector
+            else if (a.type() == typeid(std::vector<any>))
+                print_in_line(any_cast<std::vector<any>>(a));
+            else if (a.type() == typeid(std::list<any>))
+                print_in_line(any_cast<std::list<any>>(a));
             // TODO later
             else
                 cout << "Type not supported" << endl;
@@ -244,6 +249,25 @@ namespace utils {
             make_color("reset");
     }
 
+    void print(list<any> l, string delimiter = " ", map<string, variant<string, bool>> kwargs = {})
+    {
+        // cout << "pa" << endl;
+        make_color(kwargs);
+        size_t counter = 0;
+        for (auto i : l)
+        {
+            print_any(i);
+            if (counter < l.size() - 1)
+            {
+                cout << delimiter;
+            }
+            counter++;
+        }
+        if (Utils::getInstance()->getAutoReset())
+            make_color("reset");
+        cout << endl;
+    }
+
     // µ prints (for multiple elements)
     // does not accept kwargs
     template <typename... Args>
@@ -254,7 +278,7 @@ namespace utils {
         apply([delimiter](auto &&...args)
               {
         size_t count = 0;
-        ((std::cout << args << (++count != sizeof...(args) ? delimiter : "")), ...); },
+        ((print_in_line(args), std::cout << (++count != sizeof...(args) ? delimiter : "")), ...); },
               tuple);
 
         cout << endl;

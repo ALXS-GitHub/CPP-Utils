@@ -1,36 +1,35 @@
 # CPP-Utils
-CPP Utils librairy
 
-## ANSI Colors
-```md
-ANSI escape codes for text colors:
+A collection of useful C++ functions and classes.
 
-Reset: \033[0m
-Bright: \033[1m
-Dim: \033[2m
-Underlined: \033[4m
-Blink: \033[5m
-Reverse: \033[7m
-Hidden: \033[8m
-Strikethrough: \033[9m
-Colors:
+## Installation
 
-Black: \033[30m
-Red: \033[31m
-Green: \033[32m
-Yellow: \033[33m
-Blue: \033[34m
-Magenta: \033[35m
-Cyan: \033[36m
-White: \033[37m
-Background colors:
+Download the repository and include the main header file `utils.hpp` in your project.
 
-Black: \033[40m
-Red: \033[41m
-Green: \033[42m
-Yellow: \033[43m
-Blue: \033[44m
-Magenta: \033[45m
-Cyan: \033[46m
-White: \033[47m
+## Usage
+
+The functions and classes are contained in the `utils` namespace. For example, to use the `utils::print` function, you would write:
+
+```cpp
+#include "utils.hpp"
+
+int main() {
+    utils::print("Hello, world!");
+    return 0;
+}
 ```
+
+## Documentation
+
+The documentation is available [here](./docs/README.md).
+
+## Upcoming features
+
+- [ ] String manipulation functions
+- [ ] Debug functions
+- [ ] File manipulation functions
+- [ ] Math functions
+- [ ] Data structures
+- [ ] Algorithms
+- [ ] Container functions
+- [ ] Date and time functions

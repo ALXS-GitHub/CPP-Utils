@@ -85,6 +85,21 @@ namespace utils {
 
     /**
      * @brief print multiple elements
+     * 
+     * @param l list<any> : the elements to print
+     * @param delimiter string : the delimiter to use between each element
+     * @param kwargs map<string, variant<string, bool>> : the color and other options to use \n
+     * the other parameters are : background (string), reset (bool), bold (bool), dim (bool), underline (bool), blink (bool), reverse (bool), hidden (bool), strikethrough (bool)
+     * 
+     * @note this function might be used only if you are declaring the list<any> inside the parameters, if you are declaring it before, this function will not work properly. \n
+     * Moreover, this function does not support any complex type (vector, map, tuple, ...), for that, you should use the prints() function
+     * 
+     * @example print({1, 2, 3.14, "string", 'c'}, "-", {{"color", "red"}}) will print 1-2-3.14-string-c in red
+    */
+    void print(list<any> l, string delimiter, map<string, variant<string, bool>> kwargs);
+
+    /**
+     * @brief print multiple elements
      *
      * @param args Args... : the elements to print
      * @example prints(1, 2, "string", 3.14) will print 1 2 string 3.14
