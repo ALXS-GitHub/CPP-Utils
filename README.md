@@ -4,7 +4,9 @@ A collection of useful C++ functions and classes.
 
 ## Installation
 
-Download the repository and include the main header file `utils.hpp` in your project.
+You can either clone the repository or download the latest release here : [LATEST RELEASE](https://github.com/ALXS-GitHub/CPP-Utils/releases/latest)
+
+Then include the main header file `utils.hpp` in your project.
 
 ## Usage
 

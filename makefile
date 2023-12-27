@@ -1,3 +1,5 @@
+VERSION = 0.0.1
+
 CC = g++
 
 CFLAGS = -Wall -g -std=c++17 -Wall -Wextra
@@ -7,6 +9,9 @@ CFLAGS = -Wall -g -std=c++17 -Wall -Wextra
 
 %-test.o: test/%.cpp
 	$(CC) $(CFLAGS) -c test/$*.cpp -o bin/test/$*.o
+
+zip-release:
+	zip -r release/cpp_utils-$(VERSION).zip src/ docs/ README.md
 
 clean:
 	ifeq ($(OS),Windows_NT)
