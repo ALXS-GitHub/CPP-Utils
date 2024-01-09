@@ -60,6 +60,8 @@ namespace utils
 #include "./detail/detail.hpp"
 #include "./color/color.hpp"
 #include "./print/print.hpp"
+#include "./string/string.hpp"
+#include "./timer/timer.hpp"
 #include "utils.tpp"
 
 #endif // UTILS_HPP

@@ -23,6 +23,8 @@ using namespace std;
 namespace utils {
     // & detail nested namespace (for internal use only)
     namespace detail {
+
+        // µ is_string_like
         template <typename T>
         struct is_string_like : std::false_type
         {

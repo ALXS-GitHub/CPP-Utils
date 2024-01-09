@@ -8,6 +8,9 @@
         "map": "cpp",
         "any": "cpp",
         "variant": "cpp",
-        "tuple": "cpp"
+        "tuple": "cpp",
+        "xtr1common": "cpp",
+        "string": "cpp",
+        "chrono": "cpp"
     }
 }
